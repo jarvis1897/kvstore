@@ -10,7 +10,7 @@ service RaftService {
 
 message VoteRequest {
   int32  term        = 1;
-  string candidateId = 2;
+  int32 candidateId = 2;
 }
 
 message VoteResponse {

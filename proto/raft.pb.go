@@ -24,7 +24,7 @@ const (
 type VoteRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Term          int32                  `protobuf:"varint,1,opt,name=term,proto3" json:"term,omitempty"`
-	CandidateId   string                 `protobuf:"bytes,2,opt,name=candidateId,proto3" json:"candidateId,omitempty"`
+	CandidateId   int32                  `protobuf:"varint,2,opt,name=candidateId,proto3" json:"candidateId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -66,11 +66,11 @@ func (x *VoteRequest) GetTerm() int32 {
 	return 0
 }
 
-func (x *VoteRequest) GetCandidateId() string {
+func (x *VoteRequest) GetCandidateId() int32 {
 	if x != nil {
 		return x.CandidateId
 	}
-	return ""
+	return 0
 }
 
 type VoteResponse struct {
@@ -236,7 +236,7 @@ const file_proto_raft_proto_rawDesc = "" +
 	"\x10proto/raft.proto\x12\x04raft\"C\n" +
 	"\vVoteRequest\x12\x12\n" +
 	"\x04term\x18\x01 \x01(\x05R\x04term\x12 \n" +
-	"\vcandidateId\x18\x02 \x01(\tR\vcandidateId\"D\n" +
+	"\vcandidateId\x18\x02 \x01(\x05R\vcandidateId\"D\n" +
 	"\fVoteResponse\x12\x12\n" +
 	"\x04term\x18\x01 \x01(\x05R\x04term\x12 \n" +
 	"\vvoteGranted\x18\x02 \x01(\bR\vvoteGranted\"?\n" +
